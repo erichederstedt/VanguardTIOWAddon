@@ -1,7 +1,7 @@
 class CfgPatches {
-	class TIOW_ACE_Mod {
+	class VNG_TIOW_ADDON {
 		author = "Onkel Dolf";
-		name = "EU Vanguard TIOW Addon";
+		name = "Vanguard TIOW Addon";
 		requiredAddons[] = {"A3_Characters_F", "A3_Weapons_F", /*"TIOWSpaceMarines",*/ "CadFoot", "TIOW_AutoWeapons", "Cadian_Weapons", "DKoK_Weapons", "A40k_WepBase", "TIOW_Comissar", "TIOW_Mordians", "TIOW_Tau_FireWarior_Uniforms", "TIOW_Valhallans", "TIOW_Tau_Pathfinder_Uniforms", "TIOW_IG_Cosmetics", "TIOW_Spec_Weps", "ace_common"};
 		requiredVersion = 0.1;
 		units[] = {"VNG_CadATBackpack"};
