@@ -18,7 +18,7 @@ class Cfgweapons {
 	//////////////////////////////////////////////////////////////////////////////////////
 	//TODO: Balance out the space marines so a Lucius pattern lasgun can't one shot them//
 	//////////////////////////////////////////////////////////////////////////////////////
-	
+	/*
 	
 	class SM_Gear : ItemCore {
 		scope = 0;
@@ -1558,6 +1558,7 @@ class Cfgweapons {
 			};
 		};
 	};
+	*/
 	
 	class Rifle;
 	class Rifle_Base_F: Rifle
