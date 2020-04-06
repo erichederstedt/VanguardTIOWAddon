@@ -25,6 +25,7 @@ What this addon does:
 - Adds a Vanguard Meltagun in the Sidearm slot. Litterally the same as the Imperium one except the animation is wierd.
 - Buffs the 60mm grenades for the (Both Vanguard and Imperium)Lucius Pattern Grenade launcher and adds ace shrapnel to it.
 - Probably something else I forgot about.
+- AT ammo for the Tau ion rifle was added.
 
 
 *IMPORTANT* If you are playing a unit that used to have extra armor in the uniform, you have to equip it's dedicated vest item. For the priest that would be the Priest Belt but for the commissar and other units who didn't have a vest item I have now added it("[Krieg] Uniform Armor" or "[Imperium] Commissar Armor" for example). It will give you the armor you lost in the fix.
