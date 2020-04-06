@@ -6,7 +6,7 @@ What this addon does:
 - Adds a High-Powered powerpack for the M36 Kantrael with double the damage but half the ammo capacity.
 - Adds 100rnd and 150rnd versions of the heavy stubber mags.
 - Increases the space of the Cadian Medicae Backpack and Cadian Medicae Backpack (Winter Camo) by 50%.
-- Adds Vanguard Flak Armor that has a ~30% armor value increase over the normal Cadian Flak Armor. Now has a simple retexture that isn't working properely. Fuck you BI.
+- Adds Vanguard Flak Armor that has a ~30% armor value increase over the normal Cadian Flak Armor. Now has a simple retexture.
 - Adds Vanguard Medicae Flak Armor that has a ~30% armor value increase over the normal Cadian Medicae Flak Armor. Now has a simple retexture.
 - Adds two Vanguard helmets. The normal helmet and the Hostile Eviroment version with a facemask. Both have a 125% armor value increase - over the normal Cadian Helmets.
 - Adds a [Vanguard] Unkown Pattern Las-LMG which is currently using the m36 model. Will get a model once it's finnished.
