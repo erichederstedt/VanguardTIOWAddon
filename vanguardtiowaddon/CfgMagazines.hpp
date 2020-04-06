@@ -363,5 +363,18 @@ class CfgMagazines
 		ammo="VNG_MLMelta";
 		type="2*  256";
 		mass=60;
-	}
+	};
+	class VNG_ionrifle_at_mag: CA_Magazine
+	{
+		scope=2;
+		displayName="Ion rifle Anti-Tank ammo";
+		descriptionShort="Get flexed on tank";
+		picture="\40k_tau\Weapons\Definitions\UI\Ion_mag.paa";
+		mass=10;
+		ammo="VNG_ionrifle_at";
+		count=1;
+		initSpeed=500;
+		tracersEvery=1;
+		lastRoundsTracer=0;
+	};
 };

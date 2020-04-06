@@ -337,4 +337,18 @@ class CfgAmmo
 		ace_frag_skip = 0;
 		ace_frag_force = 1;
 	};
+
+	class B_127x99_Ball;
+	class VNG_ionrifle_at: B_127x99_Ball
+	{
+		typicalSpeed=700;
+		airFriction=-0.02;
+		model="\40k_tau\Effects\pulse_tracer\Pulse_tracer.p3d";
+		tracerStartTime=0.001;
+		tracerEndTime=10;
+		tracersevery=1;
+		caliber=30;
+		deflecting=0;
+		hit=800;
+	};
 };
