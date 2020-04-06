@@ -26,6 +26,7 @@ What this addon does:
 - Buffs the 60mm grenades for the (Both Vanguard and Imperium)Lucius Pattern Grenade launcher and adds ace shrapnel to it.
 - AT ammo for the Tau ion rifle was added.
 - LR Backpack for the Tau was added.
+- Tau carbine now has a 3 round burst mode.
 - Probably something else I forgot about.
 
 
