@@ -342,7 +342,7 @@ class CfgAmmo
 	class VNG_ionrifle_at: B_127x99_Ball
 	{
 		typicalSpeed=700;
-		airFriction=-0.02;
+		airFriction=-0.0004;
 		model="\40k_tau\Effects\pulse_tracer\Pulse_tracer.p3d";
 		tracerStartTime=0.001;
 		tracerEndTime=10;
@@ -350,5 +350,21 @@ class CfgAmmo
 		caliber=30;
 		deflecting=0;
 		hit=800;
+	};
+
+	class ShellBase;
+	class TIOW_ionrifle_overcharge: ShellBase
+	{
+		indirectHit=200;
+		indirectHitRange=20;
+		suppressionRadiusHit=30;
+		ace_frag_enabled = 1;
+		ace_frag_metal = 210;
+		ace_frag_charge = 185;
+		ace_frag_gurney_c = 2843;
+		ace_frag_gurney_k = 1/2;
+		ace_frag_classes[] = {"ACE_frag_huge"};
+		ace_frag_skip = 0;
+		ace_frag_force = 1;
 	};
 };

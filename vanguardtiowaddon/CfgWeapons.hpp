@@ -3240,6 +3240,7 @@ class CfgWeapons {
 			};
 		};
 	};
+	/*
 	class VNG_Captain_Armor: ItemCore
 	{
 		scope=2;
@@ -3454,28 +3455,11 @@ class CfgWeapons {
 		scope=2;
 		//picture="";
 		model="\A3\Weapons_F\empty.p3d";
-		/*
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\40k_tau\gear\data\Tau_belts_CA.paa"
-		};
-		*/
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\A3\Characters_F\Common\equip_chestrig.p3d";
 			containerClass="Supply140";
 			mass=100;
-			
-			/*
-			hiddenSelections[]=
-			{
-				"camo"
-			};
-			*/
 			class HitpointsProtectionInfo
 			{
 				class Neck {
@@ -3529,6 +3513,7 @@ class CfgWeapons {
 			};
 		};
 	};
+	*/
 	class ItemCore;
 	class H_HelmetB: ItemCore
 	{
@@ -6084,6 +6069,239 @@ class CfgWeapons {
 			maxRangeProbab=0.05;
 			aiRateOfFire=1;
 			aiRateOfFireDistance=250;
+		};
+	};
+	class TIOW_rail_rifle: Rifle_Base_F
+	{
+		ACE_barrelLength=60005;
+		dispersion=0.00000029;
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.5;
+			minRange=0;
+			minRangeProbab=0.9;
+			midRange=250;
+			midRangeProbab=0.7;
+			maxRange=600;
+			maxRangeProbab=0.3;
+			aiRateOfFireDistance=600;
+			aiRateOfFire=6;
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"TIOW_rail_rifle_Shot_SoundSet",
+					"TIOW_rail_rifle_Tail_SoundSet"
+				};
+			};
+		};
+	};
+	class Cad_KasrGear836th: Cad_Gear2
+	{
+		class ItemInfo: ItemInfo
+		{
+			class HitpointsProtectionInfo
+			{
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Arms
+				{
+					hitpointName="HitArms";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Chest
+				{
+					hitpointName="HitChest";
+					armor=225;
+					passThrough=0.06;
+				};
+				class Diaphragm
+				{
+					hitpointName="HitDiaphragm";
+					armor=180;
+					passThrough=0.06;
+				};
+				class Abdomen
+				{
+					hitpointName="HitAbdomen";
+					armor=150;
+					passThrough=0.03;
+				};
+				class Pelvis
+				{
+					hitpointName="HitPelvis";
+					armor=225;
+					passThrough=0.03;
+				};
+				class Body
+				{
+					hitpointName="HitBody";
+					armor=250;
+					passThrough=0.06;
+				};
+			};
+		};
+	};
+	class Cad_KasrGear776th: Cad_Gear2
+	{
+		class ItemInfo: ItemInfo
+		{
+			class HitpointsProtectionInfo
+			{
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Arms
+				{
+					hitpointName="HitArms";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Chest
+				{
+					hitpointName="HitChest";
+					armor=225;
+					passThrough=0.06;
+				};
+				class Diaphragm
+				{
+					hitpointName="HitDiaphragm";
+					armor=180;
+					passThrough=0.06;
+				};
+				class Abdomen
+				{
+					hitpointName="HitAbdomen";
+					armor=150;
+					passThrough=0.03;
+				};
+				class Pelvis
+				{
+					hitpointName="HitPelvis";
+					armor=225;
+					passThrough=0.03;
+				};
+				class Body
+				{
+					hitpointName="HitBody";
+					armor=250;
+					passThrough=0.06;
+				};
+			};
+		};
+	};
+	class Cad_KasrGear700th: Cad_Gear2
+	{
+		class ItemInfo: ItemInfo
+		{
+			class HitpointsProtectionInfo
+			{
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Arms
+				{
+					hitpointName="HitArms";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Chest
+				{
+					hitpointName="HitChest";
+					armor=225;
+					passThrough=0.06;
+				};
+				class Diaphragm
+				{
+					hitpointName="HitDiaphragm";
+					armor=180;
+					passThrough=0.06;
+				};
+				class Abdomen
+				{
+					hitpointName="HitAbdomen";
+					armor=150;
+					passThrough=0.03;
+				};
+				class Pelvis
+				{
+					hitpointName="HitPelvis";
+					armor=225;
+					passThrough=0.03;
+				};
+				class Body
+				{
+					hitpointName="HitBody";
+					armor=250;
+					passThrough=0.06;
+				};
+			};
+		};
+	};
+	class Cad_KasrGear667th: Cad_Gear2
+	{
+		class ItemInfo: ItemInfo
+		{
+			class HitpointsProtectionInfo
+			{
+				class Neck
+				{
+					hitpointName="HitNeck";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Arms
+				{
+					hitpointName="HitArms";
+					armor=200;
+					passThrough=0.05;
+				};
+				class Chest
+				{
+					hitpointName="HitChest";
+					armor=225;
+					passThrough=0.06;
+				};
+				class Diaphragm
+				{
+					hitpointName="HitDiaphragm";
+					armor=180;
+					passThrough=0.06;
+				};
+				class Abdomen
+				{
+					hitpointName="HitAbdomen";
+					armor=150;
+					passThrough=0.03;
+				};
+				class Pelvis
+				{
+					hitpointName="HitPelvis";
+					armor=225;
+					passThrough=0.03;
+				};
+				class Body
+				{
+					hitpointName="HitBody";
+					armor=250;
+					passThrough=0.06;
+				};
+			};
 		};
 	};
 };
