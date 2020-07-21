@@ -3,15 +3,18 @@ on:
     branches:
     - master
 
-steps:
-- uses: actions/checkout@master
-
-- uses: gruppe-adler/action-release-with-hemtt@master
-  id: build
-
-- run: echo 'Release ${{ steps.build.outputs.zip_name }} is ready.'
-
-- uses: actions/upload-artifact@master
-  with:
-    name: 'packed-mod'
-    path: ${{ steps.build.outputs.zip_path }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the source code
+      uses: actions/checkout@master
+    - name: Build using HEMTT
+      uses: arma-actions/hemtt@master
+      with:
+        command: build --release --ci
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2-preview
+      with:
+        name: VanguardTIOWAddon
+        path: releases/VanguardTIOWAddon_*.zip
