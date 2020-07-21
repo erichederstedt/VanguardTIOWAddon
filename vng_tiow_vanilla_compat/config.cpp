@@ -1,0 +1,16 @@
+class HitPoints;
+class HitHull;
+class HitEngine;
+class HitLTrack;
+class HitRTrack;
+class HitAmmoRack;
+class HitFuel;
+class Turrets;
+class NewTurret;
+class ItemInfo;
+class ItemCore;
+class HeadgearItem;
+#include "CfgPatches.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgVehicles.hpp"
+#include "CfgAmmo.hpp"

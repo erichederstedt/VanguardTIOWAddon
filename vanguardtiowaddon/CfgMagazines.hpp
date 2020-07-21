@@ -377,4 +377,69 @@ class CfgMagazines
 		tracersEvery=1;
 		lastRoundsTracer=0;
 	};
+	class VNG_100rnd_pulse_mag: CA_Magazine
+	{
+		scope = 2;
+		displayName = "100rnd Pulse Repeater Pack";
+		descriptionShort = "100 silicon-ferromagnetic charges";
+		picture = "\40k_tau\Weapons\Definitions\UI\Magazine.paa";
+		mass = 10;
+		ammo = "TIOW_rifle_pulseshot";
+		count = 100;
+		initSpeed = 1000;
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	};
+	class VNG_200rnd_pulse_mag: VNG_100rnd_pulse_mag
+	{
+		displayName = "200rnd Pulse Repeater Pack";
+		descriptionShort = "200 silicon-ferromagnetic charges";
+		mass = 20;
+		count = 200;
+	};
+	class TIOW_pulse_pistol_mag: CA_Magazine
+	{
+		count = 18;
+	};
+
+	class VNG_warp_mag: CA_Magazine
+	{
+		scope = 2;
+		displayName = "UNLIMITED POWWWWAAAAAAA";
+		descriptionShort = "UNLIMITED POWWWWAAAAAAA";
+		picture = "";
+		mass = 0;
+		ammo = "VNG_warp_ammo";
+		count = 100;
+		initSpeed = 10;
+		tracersEvery = 0;
+		lastRoundsTracer = 0;
+	};
+	class VNG_pulse_grenade_mag: CA_Magazine
+	{
+		scope = 2;
+		displayName = "Photon Grenade(UGL)";
+		descriptionShort = "A single Pulse Grenade";
+		picture = "\40k_tau\Weapons\Definitions\UI\Magazine.paa";
+		model = "40k_tau\Grenades\photon_grenade.p3d";
+		mass = 19;
+		ammo = "VNG_pulse_grenade";
+		count = 1;
+		initSpeed = 200;
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	};
+	class VNG_pulse_rifle_mag: CA_Magazine
+	{
+		scope = 2;
+		displayName = "Pulse Rifle ammo";
+		descriptionShort = "24 silicon-ferromagnetic charges";
+		picture = "\40k_tau\Weapons\Definitions\UI\Magazine.paa";
+		mass = 5;
+		ammo = "VNG_rifle_pulseshot";
+		count = 24;
+		initSpeed = 2000;
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	};
 };

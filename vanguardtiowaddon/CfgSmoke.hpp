@@ -1,6 +1,7 @@
 class CfgCloudlets
 {
 	class Default;
+	class SmokeShellWhite;
 	class smokeMissileFast: Default
 	{
 		interval="0.4 * interval";
@@ -52,6 +53,14 @@ class CfgCloudlets
 		interval=0.1;
 		positionVar[]={4,8,4};
 	};
+	
+	class VNG_SmokeShellWhite: SmokeShellWhite
+	{
+		sizeCoef = 1;
+		lifeTime = 20;
+		moveVelocity[]={0.2,0.3,0.1}; // moveVelocity[] = {0.2, 0.1, 0.1};
+		MoveVelocityVar[]={0.7,0.4,0.7}; // MoveVelocityVar[] = {0.25, 0.25, 0.25};
+	};
 };
 class smokeMissileSmokeEffect
 {
@@ -81,5 +90,40 @@ class smokeMissileSmokeEffect
 		intensity=20000;
 		interval=0.1;
 		lifeTime=180;
+	};
+};
+class VNG_SmokeShellWhiteEffect
+{
+	class SmokeShell
+	{
+		simulation = "particles";
+		type = "VNG_SmokeShellWhite";
+		position[] = {0, 0, 0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2
+	{
+		simulation = "particles";
+		type = "VNG_SmokeShellWhite";
+		position[] = {0, 0, 0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShellUW
+	{
+		simulation = "particles";
+		type = "VNG_SmokeShellWhite";
+		position[] = {0, 0, 0};
+		intensity = 1;
+		interval = 1;
+	};
+	class SmokeShell2UW
+	{
+		simulation = "particles";
+		type = "VNG_SmokeShellWhite";
+		position[] = {0, 0, 0};
+		intensity = 1;
+		interval = 1;
 	};
 };
