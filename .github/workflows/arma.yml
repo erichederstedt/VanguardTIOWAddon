@@ -13,8 +13,3 @@ jobs:
       uses: arma-actions/hemtt@master
       with:
         command: build --release --ci
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2-preview
-      with:
-        name: VanguardTIOWAddon
-        path: releases/VanguardTIOWAddon_*.zip
