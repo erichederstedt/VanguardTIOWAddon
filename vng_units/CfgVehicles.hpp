@@ -7,8 +7,6 @@ class CfgVehicles
 	class VNG_CadATBackpack;
 	class TIOW_CadianChimAuto_776;
 	class TIOW_Centaur_01_Cadian_776_Blu;
-	class TIOW_Taurox_AC_776;
-	class TIOW_Taurox_HS_776;
 	class TIOW_CadianTrojan_776;
 	class TIOW_Cad_LR_Annihilator_776th_Blu;
 	class TIOW_Cad_LR_Battlecannon_776th_Blu;
@@ -227,26 +225,6 @@ class CfgVehicles
 		side=1;
 		displayName="Vanguard Centaur";
 		hiddenSelectionsTextures[]={"whtransports\data\tiow_centaur_grey_co.paa"};
-		crew="VNG_Vanguard_Vox_Operator";
-		typicalCargo[]={"VNG_Vanguard_Vox_Operator"};
-	};
-
-	class VNG_Vanguard_Taurox_w_Autocannon: TIOW_Taurox_AC_776
-	{
-		faction="VNG_34th_Vanguard";
-		side=1;
-		displayName="Vanguard Taurox w Autocannon";
-		hiddenSelectionsTextures[]={"tiow_taurox\data\taurox_776th_co.paa","tiow_taurox\data\taurox_ac_776th_co.paa"};
-		crew="VNG_Vanguard_Vox_Operator";
-		typicalCargo[]={"VNG_Vanguard_Vox_Operator"};
-	};
-
-	class VNG_Vanguard_Taurox_w_Heavy_Stubber: TIOW_Taurox_HS_776
-	{
-		faction="VNG_34th_Vanguard";
-		side=1;
-		displayName="Vanguard Taurox w Heavy Stubber";
-		hiddenSelectionsTextures[]={"tiow_taurox\data\taurox_776th_co.paa"};
 		crew="VNG_Vanguard_Vox_Operator";
 		typicalCargo[]={"VNG_Vanguard_Vox_Operator"};
 	};

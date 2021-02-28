@@ -24,37 +24,37 @@ strength of the vests and helmets.
 			class Neck\
 			{\
 				hitpointName = "HitNeck";\
-				armor = 12;\
+				armor = 14;\
 				passThrough = 0.5;\
 			};\
 			class Arms\
 			{\
 				hitpointName = "HitArms";\
-				armor = 30;\
+				armor = 35;\
 				passThrough = 0.1;\
 			};\
 			class Chest\
 			{\
 				hitpointName = "HitChest";\
-				armor = 30;\
+				armor = 35;\
 				passThrough = 0.1;\
 			};\
 			class Diaphragm\
 			{\
 				hitpointName = "HitDiaphragm";\
-				armor = 30;\
+				armor = 35;\
 				passThrough = 0.1;\
 			};\
 			class Abdomen\
 			{\
 				hitpointName = "HitAbdomen";\
-				armor = 30;\
+				armor = 35;\
 				passThrough = 0.1;\
 			};\
 			class Pelvis\
 			{\
 				hitpointName = "HitPelvis";\
-				armor = 30;\
+				armor = 35;\
 				passThrough = 0.1;\
 			};\
 			class Body\
@@ -66,7 +66,7 @@ strength of the vests and helmets.
 			class Legs: Body\
 			{\
 				hitpointName = "HitLegs";\
-				armor = 30;\
+				armor = 35;\
 				passThrough = 0.1;\
 			};\
 		};\

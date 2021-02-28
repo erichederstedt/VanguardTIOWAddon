@@ -19,6 +19,7 @@ class MuzzleSlot;	// External class reference
 class CowsSlot;	// External class reference
 class PointerSlot;	// External class reference
 class UnderBarrelSlot;	// External class reference
+class MGun;
 #include "CfgWeapons.hpp"
 class Default;
 #include "CfgMagazines.hpp"

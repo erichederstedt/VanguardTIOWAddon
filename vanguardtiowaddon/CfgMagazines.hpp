@@ -2,7 +2,8 @@ class CfgMagazines
 {
     class Default;
 	class CA_Magazine: Default{};
-
+	class VehicleMagazine;
+	
 	class Type14_mag: CA_Magazine
 	{
 		scope=2;
@@ -22,7 +23,7 @@ class CfgMagazines
 			"Type14_mags"
 		};
 	};
-
+	
 	class TIOW_CadianHellgun_Mag: CA_Magazine
 	{
 		scope=2;
@@ -42,7 +43,7 @@ class CfgMagazines
 			"TIOW_CadianHellgun_mags"
 		};
 	};
-
+	
     class VNG_HighPoweredM36KantRifle_mag: CA_Magazine
 	{
 		scope=2;
@@ -60,7 +61,7 @@ class CfgMagazines
 			"M36KantRifle_mags"
 		};
 	};
-
+	
 	/*
 	class Experimental_mag: CA_Magazine
 	{
@@ -80,7 +81,7 @@ class CfgMagazines
 		};
 	};
 	*/
-
+	
 	class VNG_150RndLasLmg_mag: CA_Magazine
 	{
 		scope=2;
@@ -99,7 +100,7 @@ class CfgMagazines
 			"M36KantRifle_mags"
 		};
 	};
-
+	
 	class VNG_200RndLasLmg_mag: CA_Magazine
 	{
 		scope=2;
@@ -118,7 +119,7 @@ class CfgMagazines
 			"M36KantRifle_mags"
 		};
 	};
-
+	
 	class VNG_75RndHighPoweredLasLmg_mag: CA_Magazine
 	{
 		scope=2;
@@ -137,7 +138,7 @@ class CfgMagazines
 			"M36KantRifle_mags"
 		};
 	};
-
+	
 	class VNG_100RndHighPoweredLasLmg_mag: CA_Magazine
 	{
 		scope=2;
@@ -156,7 +157,7 @@ class CfgMagazines
 			"M36KantRifle_mags"
 		};
 	};
-
+	
     class VNG_100Rnd_Stubber_mag: CA_Magazine
 	{
 		scope=2;
@@ -333,9 +334,9 @@ class CfgMagazines
 			"Stub_mag_group"
 		};
 	};
-
+	
 	class RPG32_F;
-
+	
 	class VNG_MLSmoke_Mag: RPG32_F
 	{
 		author="O. Dolf";
@@ -401,7 +402,7 @@ class CfgMagazines
 	{
 		count = 18;
 	};
-
+	
 	class VNG_warp_mag: CA_Magazine
 	{
 		scope = 2;
@@ -441,5 +442,120 @@ class CfgMagazines
 		initSpeed = 2000;
 		tracersEvery = 1;
 		lastRoundsTracer = 0;
+	};
+	
+	// This crashes people and servers. Don't know why. No one knows why.
+	class LuciusLaspistol_mag;
+	class VNG_LuciusLaspistol_mag: LuciusLaspistol_mag
+	{
+		scope = 2;
+		model = "\DKoK_Weapons\Model\LuciusLaspistol_mag.p3d";
+		displayName = "[Human] Laspistol Powerpack";
+		picture = "\DKoK_Weapons\Icon\KantraelDefenderMag_ca.paa";
+		ammo = "M36KantRifle_LasBolt";
+		count = 50;
+		initSpeed = 1000;
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+		descriptionShort = "MG Defender Laspistol Powerpack - Good for 50 shots.";
+		magazineGroup[] = {"LuciusLaspistol_mags"};
+	};
+	class VNG_LuciusLaspistol_High_mag: VNG_LuciusLaspistol_mag
+	{
+		scope = 2;
+		model = "\DKoK_Weapons\Model\LuciusLaspistol_mag.p3d";
+		displayName = "[Human] Laspistol High Powered Powerpack";
+		ammo = "VNG_LasPistol_High_LasBolt";
+		count = 25;
+		descriptionShort = "MG Defender Laspistol High Powered Powerpack - Good for 25 shots.";
+		magazineGroup[] = {"LuciusLaspistol_mags"};
+	};
+	
+	class TIOW_pulse_blaster_mag: CA_Magazine
+	{
+		mass=8;
+	};
+	
+	class TIOW_LongLas_Mag: CA_Magazine
+	{
+		mass = 12;
+		initSpeed = 1000;
+	};
+	
+	class VNG_Tau_Railgun_12_7mm_APDS_mag: VehicleMagazine
+	{
+		author = "O. Dolf";
+		count = 200;
+		initSpeed = 820;
+		ammo = "VNG_Tau_Railgun_12_7mm_APDS_ammo";
+		displayName = "Railgun 12.7x95mm 200Rnd APDS Mag";
+		displayNameShort = "12.7mm APDS";
+		tracersEvery = 1;
+	};
+
+	class TIOW_melta_bomb_placeable_Mag: CA_Magazine
+	{
+		ACE_Explosives_Placeable = 1;  // Can be placed
+        useAction = 0;  // Disable the vanilla interaction
+        ACE_Explosives_SetupObject = "vng_melta_bomb_place";  // The object placed before the explosive is armed
+        ACE_Explosives_DelayTime = 1.5;  // Seconds between trigger activation and explosion
+        class ACE_Triggers // Trigger configurations
+		{
+            SupportedTriggers[] = {"Timer", "Command", "MK16_Transmitter", "DeadmanSwitch"};  // Triggers that can be used
+            class Timer 
+			{
+                FuseTime = 0.5;  // Time for the fuse to burn
+            };
+            class Command 
+			{
+                FuseTime = 0.5;
+            };
+            class MK16_Transmitter: Command {};
+            class DeadmanSwitch: Command {};
+        };
+	};
+
+	class TIOW_Tau_ExpSmall_Remote_Mag: CA_Magazine
+	{
+		ACE_Explosives_Placeable = 1;  // Can be placed
+        useAction = 0;  // Disable the vanilla interaction
+        ACE_Explosives_SetupObject = "vng_Tau_ExpSmall_place";  // The object placed before the explosive is armed
+        ACE_Explosives_DelayTime = 1.5;  // Seconds between trigger activation and explosion
+        class ACE_Triggers // Trigger configurations
+		{
+            SupportedTriggers[] = {"Timer", "Command", "MK16_Transmitter", "DeadmanSwitch"};  // Triggers that can be used
+            class Timer 
+			{
+                FuseTime = 0.5;  // Time for the fuse to burn
+            };
+            class Command 
+			{
+                FuseTime = 0.5;
+            };
+            class MK16_Transmitter: Command {};
+            class DeadmanSwitch: Command {};
+        };
+	};
+
+	class TIOW_Tau_ExpBig_Remote_Mag: CA_Magazine
+	{
+		ACE_Explosives_Placeable = 1;  // Can be placed
+        useAction = 0;  // Disable the vanilla interaction
+        ACE_Explosives_SetupObject = "vng_Tau_ExpBig_place";  // The object placed before the explosive is armed
+        ACE_Explosives_DelayTime = 1.5;  // Seconds between trigger activation and explosion
+        class ACE_Triggers // Trigger configurations
+		{
+            SupportedTriggers[] = {"Timer", "Command", "MK16_Transmitter", "DeadmanSwitch"};  // Triggers that can be used
+            class Timer 
+			{
+                FuseTime = 0.5;  // Time for the fuse to burn
+            };
+            class Command 
+			{
+                FuseTime = 0.5;
+            };
+            class MK16_Transmitter: Command {};
+            class DeadmanSwitch: Command {};
+        };
 	};
 };

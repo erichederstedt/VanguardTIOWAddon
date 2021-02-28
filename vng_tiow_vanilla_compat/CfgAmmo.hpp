@@ -19,7 +19,58 @@ class CfgAmmo
 	class B_40mm_APFSDS;
 	class B_40mm_GPR;
 	class BulletCore;
-
+	
+	class VNG_pen_base: BulletBase
+	{
+		model = "\A3\weapons_f\empty";
+		caliber = 40;
+		//warheadName = "HEAT";
+		hit = 300;
+		indirectHit = 0;
+		indirectHitRange = 0;
+		explosive = 0;
+		typicalSpeed = 1000;
+		timeToLive = 0.2;
+		simulationStep = 0.05;
+		airFriction = -0.28;
+		deflecting = 0;
+		deflectionDirDistribution = 0;
+		penetrationDirDistribution = 0;
+		aiAmmoUsageFlags = "128 + 512";
+		dangerRadiusHit = 60;
+		suppressionRadiusHit = 30;
+		CraterEffects = "ExploAmmoCrater";
+		explosionEffects = "ExploAmmoExplosion";
+		class HitEffects
+		{
+			Hit_Foliage_green = "ImpactLeavesGreen";
+			Hit_Foliage_Dead = "ImpactLeavesDead";
+			Hit_Foliage_Green_big = "ImpactLeavesGreenBig";
+			Hit_Foliage_Palm = "ImpactLeavesPalm";
+			Hit_Foliage_Pine = "ImpactLeavesPine";
+			hitFoliage = "ImpactLeaves";
+			hitGlass = "ImpactMetalSabotSmall";
+			hitGlassArmored = "ImpactMetalSabotSmall";
+			hitWood = "ImpactMetalSabotSmall";
+			hitHay = "ImpactMetalSabotSmall";
+			hitMetal = "ImpactMetalSabotSmall";
+			hitMetalPlate = "ImpactMetalSabotSmall";
+			hitBuilding = "ImpactMetalSabotSmall";
+			hitPlastic = "ImpactMetalSabotSmall";
+			hitRubber = "ImpactMetalSabotSmall";
+			hitTyre = "ImpactMetalSabotSmall";
+			hitConcrete = "ImpactMetalSabotSmall";
+			hitMan = "ImpactMetalSabotSmall";
+			hitGroundSoft = "ImpactMetalSabotSmall";
+			hitGroundRed = "ImpactMetalSabotSmall";
+			hitGroundHard = "ImpactMetalSabotSmall";
+			hitWater = "ImpactEffectsWater";
+			default_mat = "ImpactMetalSabotSmall";
+		};
+		whistleOnFire = 1;
+		whistleDist = 14;
+	};
+	
 	// Human stuff
 	class Long825: BulletBase // B_556x45_Ball
 	{
@@ -166,7 +217,8 @@ class CfgAmmo
 	};
 	class TIOW_LongLas_LasBolt: BulletBase // B_408_Ball 
 	{
-		hit = 24;
+		initSpeed = 1000;
+		hit = 48; // 24 @SpecialWeaponRebalance
 		caliber = 2.4;
 		typicalSpeed = 910;
 		ACE_caliber = 10.363;
@@ -253,9 +305,9 @@ class CfgAmmo
 	};
 	class TIOW_PlasmagunRound: Sh_120mm_HE // B_127x108_Ball TODO: Change from shell to bullet
 	{
-		hit = 35;
-		indirectHit = 0;
-		indirectHitRange = 0;
+		hit = 70; // 35 @SpecialWeaponRebalance
+		indirectHit = 20; // 0 @SpecialWeaponRebalance
+		indirectHitRange = 0.2; // 0 @SpecialWeaponRebalance
 		caliber = 2.8;
 		typicalSpeed = 820;
 		ACE_caliber = 12.979;
@@ -268,13 +320,23 @@ class CfgAmmo
 		ACE_dragModel = 1;
 		ACE_muzzleVelocities[] = {820};
 		ACE_barrelLengths[] = {728.98};
+		
+		simulation = "shotBullet";
+		
+		submunitionAmmo = "VNG_PlasmagunRound_Penetrator";
+		submunitionDirectionType = "SubmunitionModelDirection";
+		submunitionInitSpeed = 1000;
+		submunitionParentSpeedCoef = 0;
+		submunitionInitialOffset[] = {0, 0, -0.2};
+		triggerOnImpact = 1;
+		deleteParentWhenTriggered = 0;
 	};
 	class TIOW_Overcharge_PlasmagunRound: TIOW_PlasmagunRound // B_20mm
 	{
-		hit = 80;
+		hit = 180; // 80 @SpecialWeaponRebalance
 		typicalSpeed = 1050;
-		indirectHit = 25;
-		indirectHitRange = 2;
+		indirectHit = 60; // 25 @SpecialWeaponRebalance
+		indirectHitRange = 5; // 2 @SpecialWeaponRebalance
 		warheadName = "AT";
 		caliber = 1.4;
 		explosive = 0.65;
@@ -288,12 +350,30 @@ class CfgAmmo
 		ACE_dragModel = 1;
 		ACE_muzzleVelocities[] = {1050};
 		ACE_barrelLengths[] = {728.98};
+		
+		simulation = "shotBullet";
+		
+		submunitionAmmo = "VNG_PlasmagunRound_Penetrator"; // @SpecialWeaponRebalance
+		submunitionDirectionType = "SubmunitionModelDirection"; // @SpecialWeaponRebalance
+		submunitionInitSpeed = 1000; // @SpecialWeaponRebalance
+		submunitionParentSpeedCoef = 0; // @SpecialWeaponRebalance
+		submunitionInitialOffset[] = {0, 0, -0.2}; // @SpecialWeaponRebalance
+		triggerOnImpact = 1; // @SpecialWeaponRebalance
+		deleteParentWhenTriggered = 0; // @SpecialWeaponRebalance
+	};
+	class VNG_PlasmagunRound_Penetrator: BulletBase // @SpecialWeaponRebalance
+	{
+		warheadName = "AT";
+		simulation = "shotBullet";
+		ACE_damageType = "bullet";
+		caliber = 20;
+		hit = 390;
 	};
 	class TIOW_Melta_Ammo: BulletBase
 	{
 		hit=615;
 	};
-
+	
 	//Space Marine stuff
 	class TIOW_SmBoltRound: BulletBase // B_127x108_Ball
 	{
@@ -373,13 +453,13 @@ class CfgAmmo
 		ACE_muzzleVelocities[] = {1140};
 		ACE_barrelLengths[] = {728.98};
 	};
-
+	
 	//T'au stuff
 	class TIOW_rifle_pulseshot: B_127x99_Ball // B_93x64_Ball but way lower pen
 	{
-		hit = 18;
-		caliber = 1;
-		typicalSpeed = 785;
+		hit = 18; // 18
+		caliber = 2.2;
+		typicalSpeed = 820; // 785
 		ACE_caliber = 9.28;
 		ACE_bulletLength = 35.56;
 		ACE_bulletMass = 17;
@@ -394,10 +474,13 @@ class CfgAmmo
 	};
 	class TIOW_blaster_pulseshot: B_12Gauge_Pellets // B_12Gauge_Pellets TODO: Needs check
 	{
-		hit = 2;
+		hit = 10;
 		indirectHit = 2;
 		indirectHitRange = 0.4;
-		caliber = 0.33;
+		caliber = 1;
+		fireSpreadAngle=9;
+		trackLead=1.0;
+		trackOversteer=1.0;
 	};
 	class TIOW_ionrifle_shot: B_127x99_Ball // B_30mm_AP
 	{
@@ -439,10 +522,10 @@ class CfgAmmo
 		ACE_muzzleVelocities[] = {1140};
 		ACE_barrelLengths[] = {728.98};
 	};
-	class TIOW_railrifle_shot: B_127x99_Ball // B_127x108_Ball
+	class TIOW_railrifle_shot: B_127x99_Ball // B_127x108_APDS
 	{
-		hit = 35;
-		caliber = 2.8;
+		hit = 60;
+		caliber = 3.6;
 		typicalSpeed = 820;
 		ACE_caliber = 12.979;
 		ACE_bulletLength = 64.008;
@@ -542,43 +625,13 @@ class CfgAmmo
 		typicalSpeed = 1800;
 		ACE_damageType = "explosive";
 		ace_rearm_caliber = 35;
-
+		
 		dangerRadiusBulletClose = 20;
 		dangerRadiusHit = 60;
 		suppressionRadiusBulletClose = 12;
 		suppressionRadiusHit = 24;
 	};
-
-	class Taurox_Autocannon60mmAP: B_30mm_APFSDS // B_30mm_APFSDS
-	{
-		hit = 120;
-		indirectHit = 8;
-		indirectHitRange = 0.2;
-		warheadName = "AP";
-		caliber = 6;
-		deflecting = 15;
-		typicalSpeed = 1320;
-	};
-	class Taurox_Autocannon60mmAPCR: B_40mm_APFSDS // B_40mm_APFSDS
-	{
-		hit = 150;
-		indirectHit = 8;
-		indirectHitRange = 0.2;
-		warheadName = "AP";
-		caliber = 8;
-		deflecting = 15;
-		typicalSpeed = 1140;
-	};
-	class Taurox_Autocannon60mmHE: B_40mm_GPR // B_40mm_GPR
-	{
-		hit = 70;
-		indirectHit = 25;
-		indirectHitRange = 4;
-		warheadName = "AP";
-		caliber = 4.6;
-		deflecting = 10;
-	};
-
+	
 	/*
 	class TIOW_Battlecannon_120mm_APCBC: ShellBase // TODO: Sh_120mm_APFSDS
 	{

@@ -322,8 +322,8 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				weapons[] = {"TIOW_AutoCannon60mm", "TIOW_HeavyStubber_cargo_vehicle"};
-				magazines[] = {"TIOW_Autocannon60mmAPCRMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "TIOW_200Rnd_Stubber_mag", "TIOW_200Rnd_Stubber_mag_Tracer", "TIOW_200Rnd_Stubber_amput", "TIOW_200Rnd_Stubber_manstop", "TIOW_200Rnd_Stubber_expander"};
+				weapons[] = {"TIOW_AutoCannon60mm", "KriegHeavyStubber"};
+				magazines[] = {"TIOW_Autocannon60mmAPCRMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer"};
 				class HitPoints
 				{
 					class HitTurret
@@ -653,8 +653,8 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				weapons[] = {"TIOW_AutoCannon60mm", "TIOW_HeavyStubber_cargo_vehicle"};
-				magazines[] = {"TIOW_Autocannon60mmAPCRMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "TIOW_200Rnd_Stubber_mag", "TIOW_200Rnd_Stubber_mag_Tracer", "TIOW_200Rnd_Stubber_amput", "TIOW_200Rnd_Stubber_manstop", "TIOW_200Rnd_Stubber_expander"};
+				weapons[] = {"TIOW_AutoCannon60mm", "KriegHeavyStubber"};
+				magazines[] = {"TIOW_Autocannon60mmAPCRMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "TIOW_Autocannon60mmHEMag", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer", "VNG_150Rnd_Stubber_mag_Tracer"};
 				class HitPoints
 				{
 					class HitTurret
@@ -954,4 +954,106 @@ class CfgVehicles
 			};
 		};
 	};
+	
+	/*
+	class SoldierWB;
+	
+	class TIOW_NecronLord_Sautekh: SoldierWB
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Charnovokh: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Mephrit: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Nephrekh: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Nihilakh: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Novokh: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Szarekhan: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronLord_Thokt: TIOW_NecronLord_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+		respawnLinkedItems[] = {"VNG_Necron_Lord_Armor", "TIOW_NecronLord_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; 
+	};
+	
+	class TIOW_NecronWarrior_Sautekh;
+	class TIOW_NecronWarrior_Sautekh: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Charnovokh: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Mephrit: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Nephrekh: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Nihilakh: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Novokh: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Szarekhan: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	class TIOW_NecronWarrior_Thokt: TIOW_NecronWarrior_Sautekh
+	{
+		linkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+		respawnLinkedItems[] = {"VNG_Necron_Warrior_Armor", "TIOW_NecronWarrior_Helm", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+	};
+	
+	*/
 };

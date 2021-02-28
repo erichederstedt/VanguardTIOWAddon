@@ -1,2 +1,6 @@
 .code-workspace
 *.code-workspace
+project.4coder
+*.4coder
+vng_terrain/
+vng_alive/

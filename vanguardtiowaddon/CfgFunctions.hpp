@@ -7,6 +7,7 @@ class CfgFunctions
 			file="vanguardtiowaddon\Functions";
 			class ForwardThrustersStart{};
 			class ForwardThrustersStop{};
+			class DevestatorAbility{};
 		};
 	};
 };

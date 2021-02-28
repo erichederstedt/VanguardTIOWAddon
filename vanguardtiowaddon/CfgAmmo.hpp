@@ -7,7 +7,9 @@ class CfgAmmo
 	class G_40mm_HE;
 	class TIOW_MLAT;
 	class Grenade;
-
+	class B_127x108_APDS;
+	class TIOW_Tau_Railgun_AP;
+	
 	class VNG_MLSmoke: RocketBase
 	{
 		model="\A3\Weapons_F_Exp\Launchers\RPG7\rocket_rpg7.p3d";
@@ -207,7 +209,7 @@ class CfgAmmo
 		deflecting = 30;
 		hit = 250;
 		*/
-		airFriction = 0;
+		//airFriction = -0.0001;
 
 		triggerOnImpact = 1;
 		submunitionAmmo="VNG_ionrifle_at_penetrator";
@@ -220,7 +222,7 @@ class CfgAmmo
 	class VNG_ionrifle_at_penetrator: ammo_Penetrator_Base
 	{
 		warheadName = "TandemHEAT";
-		caliber = 300;
+		caliber = 60;
 		hit = 512;
 	};
 
@@ -278,7 +280,84 @@ class CfgAmmo
 	class TIOW_rifle_pulseshot;
 	class VNG_rifle_pulseshot: TIOW_rifle_pulseshot
 	{
-		typicalSpeed = 2000;
+		//typicalSpeed = 2000;
+		//airFriction = -0.000808; // Why is this lower then the normal -0.00002?
+		
+		submunitionAmmo = "VNG_rifle_pulseshot_under";
+		submunitionDirectionType="SubmunitionModelDirection";
+		triggerSpeedCoef = 1;
+		submunitionParentSpeedCoef=1;
+		submunitionInitialOffset[]={0,-0.1,0};
+		triggerTime = 0;
+		deleteParentWhenTriggered = false;
+	};
+	class VNG_rifle_pulseshot_under: TIOW_rifle_pulseshot
+	{
+		//typicalSpeed = 2000;
 		airFriction = -0.000808;
 	};
+
+	class M36KantRifle_LasBolt;
+	class VNG_LasPistol_LasBolt: M36KantRifle_LasBolt
+	{
+		hit=11.6;
+		caliber=1.6;
+		typicalSpeed = 820;
+		ACE_caliber=6.706;
+        ACE_bulletLength=32.893;
+        ACE_bulletMass=7.9704;
+        ACE_ammoTempMuzzleVelocityShifts[]={-26.55, -25.47, -22.85, -20.12, -16.98, -12.80, -7.64, -1.53, 5.96, 15.17, 26.19};
+        ACE_ballisticCoefficients[]={0.263};
+        ACE_velocityBoundaries[]={};
+        ACE_standardAtmosphere="ICAO";
+		ACE_dragModel = 1;
+        ACE_muzzleVelocities[]={730, 760, 788, 800, 810, 830};
+        ACE_barrelLengths[]={254.0, 406.4, 508.0, 609.6, 660.4, 762.0};
+		airFriction = -0.0001;
+		timetolive = 3;
+	};
+	class VNG_LasPistol_High_LasBolt: VNG_LasPistol_LasBolt
+	{
+		hit = 16;
+		caliber = 2;
+		airFriction = -0.001;
+		timetolive = 3;
+	};
+	
+	class VNG_Tau_Railgun_12_7mm_APDS_ammo: B_127x108_APDS
+	{
+		author = "O. Dolf";
+		model = "\40k_tau\Effects\pulse_tracer\Pulse_tracer.p3d";
+		class HitEffects
+		{
+			vehicle = "ImpactMetal";
+			object = "ImpactMetal";
+			hitMan = "ImpactMetal";
+		};
+	};
+	
+	
+	class SubmunitionBase;
+	class TIOW_Tau_Railgun_Airburst: SubmunitionBase
+	{
+		submunitionAmmo = "VNG_Tau_Railgun_12_7mm_APDS_ammo";
+		submunitionConeType[] = {"poissondisc", 20};
+		submunitionConeAngle = 0.8;
+		triggerSpeedCoef[] = {0.85, 1};
+		triggerTime = 0.008;
+	};
+	
+	/*
+	// Change this to actually be useful
+	class TIOW_Tau_Railgun_Airburst_mag: TIOW_Tau_Railgun_AP
+	{
+		submunitionAmmo = "TIOW_rifle_pulseshot";
+		submunitionConeType[] = {"poissondisc", 100};
+		submunitionConeAngle = 10;
+		triggerDistance = 10;
+		triggerOnImpact = false;
+		aiAmmoUsageFlags = "16 + 64 + 128";
+		cost = 300;
+	};
+	*/
 };

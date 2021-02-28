@@ -12,12 +12,14 @@ class CfgVehicles
 	class TIOW_Tau_Bck_Breacher_Shasui_SC;
 	class TIOW_Tau_Bck_Breacher_Shasui_FE;
 	class TIOW_Tau_Bck_Breacher_Shasui_VL;
-    
+    class Tank_F;
+	class Plane_CAS_02_base_F;
+	
 	class TIOWSpaceMarine_Base : SoldierWB 
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS // If ADD_HITPOINTS(); is used Armake will create error thinking that you are passing a argument.
 		};
 	};
 
@@ -46,7 +48,7 @@ class CfgVehicles
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 		linkedItems[]=
 		{
@@ -80,8 +82,9 @@ class CfgVehicles
 		};
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
+
 	};
     class TIOW_IG_Captain_667: B_Soldier_base_F
 	{
@@ -93,7 +96,7 @@ class CfgVehicles
 		};
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 
@@ -101,7 +104,7 @@ class CfgVehicles
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 
@@ -109,15 +112,32 @@ class CfgVehicles
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
+		/*
+		class UserActions
+		{
+			class DevestatorAbility
+			{
+				//condition="((this getvariable [""DevestatorAbilityEnabled"",false]))";
+				displayName="Hold the Line";
+				onlyForPlayer=1;
+				priority=100;
+				position="";
+				radius=1; // 100000
+				showWindow=0;
+				statement="0 = this spawn VNG_fnc_DevestatorAbility";
+				userActionID=50;
+			};
+		};
+		*/
 	};
 
 	class CadTroopBase: B_Soldier_F
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 
@@ -125,7 +145,7 @@ class CfgVehicles
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 
@@ -133,15 +153,16 @@ class CfgVehicles
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 	
 	class TIOW_Pathfinder: B_Soldier_base_F
 	{
+		camouflage = 0.4;
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 
@@ -149,7 +170,7 @@ class CfgVehicles
 	{
 		class HitPoints
 		{
-			ADD_HITPOINTS();
+			ADD_HITPOINTS
 		};
 	};
 	
@@ -395,9 +416,9 @@ class CfgVehicles
 	class testHelo: Heli_Light_01_armed_base_F
 	{
 		//helmetMountedDisplay = 1;
-		scope = 1;
-		scopeCurator = 1;
-		scopeArsenal = 1;
+		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
 		displayName="Test helo";
 		armor = 350;
 		model = "\WHair\Val\model\Valkyrie.p3d";
@@ -1387,5 +1408,87 @@ class CfgVehicles
 				initPhase = 0;
 			};
 		};
+	};
+	
+	/*
+	class TIOW_NecronLord_Sautekh: SoldierWB
+	{
+		class HitPoints
+		{
+			ADD_HITPOINTS
+		};
+	};
+	class TIOW_NecronWarrior_Sautekh: SoldierWB
+	{
+		class HitPoints
+		{
+			ADD_HITPOINTS
+		};
+	};
+	*/
+	
+	class TIOW_Tau_Hammerhead_TA: Tank_F
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: NewTurret
+			{
+				weapons[] = {"TIOW_Tau_Railgun", "VNG_Tau_Railgun_12_7mm_APDS"};
+				magazines[] = {"TIOW_Tau_Railgun_AP_mag", "TIOW_Tau_Railgun_AP_mag", "TIOW_Tau_Railgun_AP_mag", "TIOW_Tau_Railgun_AP_mag", "TIOW_Tau_Railgun_Airburst_mag", "TIOW_Tau_Railgun_Airburst_mag", "VNG_Tau_Railgun_12_7mm_APDS_mag", "VNG_Tau_Railgun_12_7mm_APDS_mag", "VNG_Tau_Railgun_12_7mm_APDS_mag"};
+			};
+		};
+	};
+	
+	class TIOW_Tau_Hammerhead_Ioncannon_TA: TIOW_Tau_Hammerhead_TA
+	{
+		vehicleClass = "Armored";
+		displayName = "Tau Ion Cannon Hammerhead";
+		editorSubcategory = "TA_Sept";
+		accuracy = 0.5;
+		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
+		model = "\40k_tau\Vehicles\Hammerhead\Hammerhead_Ioncannon.p3d";
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				weapons[] = {"TIOW_Tau_Ioncannon", "VNG_Tau_Railgun_12_7mm_APDS"};
+				magazines[] = {"TIOW_Ioncannon_mag", "TIOW_Ioncannon_mag", "TIOW_Ioncannon_mag", "VNG_Tau_Railgun_12_7mm_APDS_mag", "VNG_Tau_Railgun_12_7mm_APDS_mag", "VNG_Tau_Railgun_12_7mm_APDS_mag"};
+			};
+		};
+	};
+
+	class ACE_Explosives_Place;
+    class vng_melta_bomb_place: ACE_Explosives_Place
+	{
+        displayName = "Melta Bomb";  // Name of the item
+        model = "TIOW_IG_Explosives\tiow_ig_melta_bomb_placeable\ig_melta_bomb_placeable_mag.p3d";  // Path to your model
+        ACE_offset[] = {0, 0, 0};  // Offset of the interaction point from the model in meters on the X,Y,Z axis. Try setting this to the place where it makes most sense (e.g. to buttons/switches/pins)
+    };
+	class vng_Tau_ExpSmall_place: ACE_Explosives_Place
+	{
+        displayName = "Small Fusion Bomb";  // Name of the item
+        model = "40k_tau\Explosives\ExplosiveSmall.p3d";  // Path to your model
+        ACE_offset[] = {0, 0, 0};  // Offset of the interaction point from the model in meters on the X,Y,Z axis. Try setting this to the place where it makes most sense (e.g. to buttons/switches/pins)
+    };
+	class vng_Tau_ExpBig_place: ACE_Explosives_Place
+	{
+        displayName = "Large Fusion Bomb";  // Name of the item
+        model = "40k_tau\Explosives\ExplosiveBig.p3d";  // Path to your model
+        ACE_offset[] = {0, 0, 0};  // Offset of the interaction point from the model in meters on the X,Y,Z axis. Try setting this to the place where it makes most sense (e.g. to buttons/switches/pins)
+    };
+
+	class TIOW_Thunderbolt_Base: Plane_CAS_02_base_F
+	{
+		crew = "TIOW_Cad_Tnk776th";
+	};
+	class TIOW_Thunderbolt_Base_I: TIOW_Thunderbolt_Base
+	{
+		crew = "TIOW_Cad_Tnk776th_Indep";
+	};
+	class TIOW_Thunderbolt_Base_O: TIOW_Thunderbolt_Base
+	{
+		crew = "TIOW_Cad_Tnk776th_OP";
 	};
 };

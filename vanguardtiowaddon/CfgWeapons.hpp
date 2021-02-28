@@ -21,206 +21,12 @@ class CfgWeapons
 	class SM_Gear;
 	class EventHandlers;
 
-	/*
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-		author="$STR_A3_Bohemia_Interactive";
-		_generalMacro="lasgunbase";
-		magazines[]=
-		{
-			"30Rnd_65x39_caseless_mag",
-			"30Rnd_65x39_caseless_mag_Tracer"
-		};
-		class Library
-		{
-			libTextDesc="$STR_A3_CfgWeapons_arifle_XMX_Library0";
-		};
-		reloadAction="GestureReloadMX";
-		recoil="recoil_mx";
-		maxZeroing=1000;
-		discreteDistanceInitIndex=0;
-		maxRecoilSway=0.0125;
-		swayDecaySpeed=1.25;
-		class GunParticles: GunParticles
-		{
-			class SecondEffect
-			{
-				positionName="Nabojnicestart";
-				directionName="Nabojniceend";
-				effectName="CaselessAmmoCloud";
-			};
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			class MuzzleSlot: MuzzleSlot
-			{
-				linkProxy="\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[]=
-				{
-					"muzzle_snds_h"
-				};
-				iconPosition[]={0,0.45};
-				iconScale=0.2;
-			};
-			class CowsSlot: CowsSlot
-			{
-				iconPosition[]={0.5,0.35};
-				iconScale=0.2;
-			};
-			class PointerSlot: PointerSlot
-			{
-				iconPosition[]={0.2,0.45};
-				iconScale=0.25;
-			};
-		};
-		distanceZoomMin=300;
-		distanceZoomMax=300;
-		descriptionShort="$STR_A3_CfgWeapons_XM_base_F0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\A3\Weapons_F\Rifles\MX\data\Anim\mx.rtm"
-		};
-		modes[]=
-		{
-			"Single",
-			"FullAuto",
-			"fullauto_medium",
-			"single_medium_optics1",
-			"single_far_optics2"
-		};
-		class Single: Mode_SemiAuto
-		{
-			reloadTime=0.096;
-			recoil="recoil_single_mx";
-			recoilProne="recoil_single_prone_mx";
-			dispersion=0.00087;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=200;
-			midRangeProbab=0.7;
-			maxRange=400;
-			maxRangeProbab=0.3;
-		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.096;
-			dispersion=0.00087;
-			recoil="recoil_auto_mx";
-			recoilProne="recoil_auto_prone_mx";
-			minRange=0;
-			minRangeProbab=0.8;
-			midRange=15;
-			midRangeProbab=0.7;
-			maxRange=30;
-			maxRangeProbab=0.1;
-			aiRateOfFire=1e-006;
-		};
-		class fullauto_medium: FullAuto
-		{
-			showToPlayer=0;
-			burst=3;
-			aiBurstTerminable=1;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=75;
-			midRangeProbab=0.7;
-			maxRange=150;
-			maxRangeProbab=0.05;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=200;
-		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=450;
-			midRangeProbab=0.7;
-			maxRange=600;
-			maxRangeProbab=0.2;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=600;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
-			showToPlayer=0;
-			minRange=100;
-			minRangeProbab=0.1;
-			midRange=500;
-			midRangeProbab=0.6;
-			maxRange=700;
-			maxRangeProbab=0.05;
-			aiRateOfFire=8;
-			aiRateOfFireDistance=700;
-		};
-		class GL_3GL_F: UGL_F
-		{
-			displayName="$STR_A3_cfgweapons_3gl0";
-			descriptionShort="$STR_A3_cfgweapons_3gl1";
-			useModelOptics=0;
-			useExternalOptic=0;
-			magazines[]=
-			{
-				"1Rnd_HE_Grenade_shell",
-				"UGL_FlareWhite_F",
-				"UGL_FlareGreen_F",
-				"UGL_FlareRed_F",
-				"UGL_FlareYellow_F",
-				"UGL_FlareCIR_F",
-				"1Rnd_Smoke_Grenade_shell",
-				"1Rnd_SmokeRed_Grenade_shell",
-				"1Rnd_SmokeGreen_Grenade_shell",
-				"1Rnd_SmokeYellow_Grenade_shell",
-				"1Rnd_SmokePurple_Grenade_shell",
-				"1Rnd_SmokeBlue_Grenade_shell",
-				"1Rnd_SmokeOrange_Grenade_shell",
-				"3Rnd_HE_Grenade_shell",
-				"3Rnd_UGL_FlareWhite_F",
-				"3Rnd_UGL_FlareGreen_F",
-				"3Rnd_UGL_FlareRed_F",
-				"3Rnd_UGL_FlareYellow_F",
-				"3Rnd_UGL_FlareCIR_F",
-				"3Rnd_Smoke_Grenade_shell",
-				"3Rnd_SmokeRed_Grenade_shell",
-				"3Rnd_SmokeGreen_Grenade_shell",
-				"3Rnd_SmokeYellow_Grenade_shell",
-				"3Rnd_SmokePurple_Grenade_shell",
-				"3Rnd_SmokeBlue_Grenade_shell",
-				"3Rnd_SmokeOrange_Grenade_shell"
-			};
-			cameraDir="OP_look";
-			discreteDistance[]={50,75,100,150,200,250,300,350,400};
-			discreteDistanceCameraPoint[]=
-			{
-				"OP_eye_50",
-				"OP_eye_75",
-				"OP_eye_100",
-				"OP_eye_150",
-				"OP_eye_200",
-				"OP_eye_250",
-				"OP_eye_300",
-				"OP_eye_350",
-				"OP_eye_400"
-			};
-			discreteDistanceInitIndex=1;
-			reloadAction="GestureReloadMXUGL";
-			reloadMagazineSound[]=
-			{
-				"A3\Sounds_F\arsenal\weapons\Rifles\MX\Mx_UGL_reload",
-				1,
-				1,
-				10
-			};
-		};
-		aiDispersionCoefY=6;
-		aiDispersionCoefX=4;
-	};
-	*/
-	
+	class Single;
 
+	class LMG_coax;
+	
+	
+	
 	class KriegHeavyStubber: Rifle_Base_F
 	{
 		magazines[]=
@@ -250,8 +56,41 @@ class CfgWeapons
 			"M36KantRifle_mag",
 			"VNG_HighPoweredM36KantRifle_mag"
 		};
+		class OpticsModes
+		{
+			class TWS
+			{
+				visionMode[] = {"Normal", "NVG"};
+			};
+		};
+		class single_medium_optics1: Single
+		{
+			requiredOpticType = 1;
+			showToPlayer = 0;
+			minRange = 2;
+			minRangeProbab = 0.2;
+			midRange = 450;
+			midRangeProbab = 0.7;
+			maxRange = 300;
+			maxRangeProbab = 0.2;
+			aiRateOfFire = 2;
+			aiRateOfFireDistance = 600;
+		};
+		class single_far_optics2: single_medium_optics1
+		{
+			requiredOpticType = 2;
+			showToPlayer = 0;
+			minRange = 100;
+			minRangeProbab = 0.1;
+			midRange = 500;
+			midRangeProbab = 0.6;
+			maxRange = 600;
+			maxRangeProbab = 0.05;
+			aiRateOfFire = 4;
+			aiRateOfFireDistance = 1200;
+		};
 	};
-
+	
 	class Cad_Gear_Vest2: ItemCore
 	{
 		scope=1;
@@ -272,9 +111,9 @@ class CfgWeapons
 			};
 		};
 	};
-
+	
     class Cad_Gear2;
-
+	
 	class VNG_Gear: Cad_Gear2
 	{
 		scope=2;
@@ -462,7 +301,7 @@ class CfgWeapons
 	};
 	
 	class Cad_Inf_Helm2;
-
+	
 	class VNG_Inf_Helm: Cad_Inf_Helm2
 	{
 		scope=2;
@@ -500,14 +339,14 @@ class CfgWeapons
 			};
 		};
 	};
-
+	
 	class VNG_Integrated_NVG: NVGoggles
 	{
 		scope = 1;
 		visionMode[] = {"Normal", "NVG"};
 		modelOptics = "";
 	};
-
+	
 	class VNG_InfBreather_Helm: Cad_Inf_Helm2
 	{
 		scope=2;
@@ -561,7 +400,7 @@ class CfgWeapons
 			"VNG_Integrated_NVG"
 		};
 	};
-
+	
 	class VNG_LasLMGBase: M36KantRifleBase
 	{
 		author="Dolf";
@@ -721,7 +560,7 @@ class CfgWeapons
 				};
 			};
 		};
-
+		
 		/*
 		class FullAuto: Mode_FullAuto
 		{
@@ -871,7 +710,7 @@ class CfgWeapons
 			aiRateOfFireDistance=250;
 		};
 		*/
-
+		
 		class FullAutoSuppression: Mode_FullAuto
 		{
 			sounds[]=
@@ -1168,9 +1007,9 @@ class CfgWeapons
 			aiRateOfFire=1;
 			aiRateOfFireDistance=250;
 		};
-
+		
 	};
-
+	
 	class VNG_MemeLMG: VNG_LasLMGBase
 	{
 		author="Dolf";
@@ -1195,7 +1034,7 @@ class CfgWeapons
 			"Burst",
 			"FullAutoSuppression"
 		};
-
+		
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.096;
@@ -1337,7 +1176,7 @@ class CfgWeapons
 				};
 			};
 		};
-
+		
 		class FullAutoSuppression: Mode_FullAuto
 		{
 			sounds[]=
@@ -1627,7 +1466,7 @@ class CfgWeapons
 			aiRateOfFireDistance=250;
 		};
 	};
-
+	
 	class VNG_LasLMG: VNG_LasLMGBase
 	{
 		author="Dolf";
@@ -1647,9 +1486,9 @@ class CfgWeapons
 		};
 		model="\Cadian_Weapons\Model\M36KantRifle.p3d";
 	};
-
 	
-
+	
+	
 	class MissileLauncherDKOK: launch_RPG7_F
 	{
 		class OpticsModes
@@ -1689,6 +1528,9 @@ class CfgWeapons
 	};
 	class TIOW_Priest_Gear: ItemCore
 	{
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
 		class ItemInfo: VestItem
 		{
 			class HitpointsProtectionInfo
@@ -1746,6 +1588,9 @@ class CfgWeapons
 	};
 	class TIOW_Cultist_Gear: ItemCore
 	{
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
 		class ItemInfo: VestItem
 		{
 			class HitpointsProtectionInfo
@@ -1803,7 +1648,10 @@ class CfgWeapons
 	};
 	class TIOW_Cultist_Gear2: ItemCore
 	{
-		class ItemInfo: ItemInfo
+		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
+		class ItemInfo: VestItem
 		{
 			class HitpointsProtectionInfo
 			{
@@ -1860,6 +1708,9 @@ class CfgWeapons
 	};
 	class TIOW_Mordian_Belt: ItemCore
 	{
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
 		class ItemInfo: VestItem
 		{
 			class HitpointsProtectionInfo
@@ -1892,7 +1743,10 @@ class CfgWeapons
 	};
 	class TIOW_Valhallan_Belt: ItemCore
 	{
-		class ItemInfo: ItemInfo
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
+		class ItemInfo: VestItem
 		{
 			class HitpointsProtectionInfo
 			{
@@ -3081,6 +2935,7 @@ class CfgWeapons
 	
 	class TIOW_ion_rifle: Rifle_Base_F
 	{
+		recoil = "recoil_mxm";
 		magazines[]=
 		{
 			"TIOW_ionrifle_shot_mag",
@@ -3204,8 +3059,11 @@ class CfgWeapons
 	class TIOW_pulse_rifle: Rifle_Base_F
 	{
 		recoil = "recoil_mxm";
+		/*
 		initSpeed = 2000;
+		*/
 		magazines[] = {"VNG_pulse_rifle_mag"};
+		
 		mass = 3;
 	};
 	
@@ -3239,7 +3097,7 @@ class CfgWeapons
 			};
 		};
 	};
-
+	
 	class TIOW_Tau_optics_Mk_zoom: ItemCore
 	{
 		class ItemInfo: InventoryOpticsItem_Base_F
@@ -3302,7 +3160,8 @@ class CfgWeapons
 				soundSetShot[] = {"TIOW_pulse_carbine_Shot_SoundSet", "TIOW_pulse_carbine_Tail_SoundSet"};
 			};
 		};
-
+		muzzles[] = {this};
+		
 		/*
 		class EventHandlers: EventHandlers
 		{
@@ -3311,7 +3170,7 @@ class CfgWeapons
 		};
 		*/
 	};
-
+	
 	class U_TIOW_Fire_Warrior_VIor: U_TIOW_Fire_Warrior_VL
 	{
 		displayName="Tau Fire Warrior [VIor sept]";
@@ -3330,7 +3189,7 @@ class CfgWeapons
 			uniformClass="TIOW_Fire_Warrior_VIor";
 		};
 	};
-
+	
 	class TIOW_U_Fire_Warrior_VIor_O: U_TIOW_Fire_Warrior_VIor
 	{
 		scope=1;
@@ -3343,7 +3202,7 @@ class CfgWeapons
 			mass=150;
 		};
 	};
-
+	
 	class TIOW_U_Fire_Warrior_VIor_B: TIOW_U_Fire_Warrior_VIor_O
 	{
 		scope=2;
@@ -3356,7 +3215,7 @@ class CfgWeapons
 			mass=150;
 		};
 	};
-
+	
 	class TIOW_U_Fire_Warrior_VIor_I: TIOW_U_Fire_Warrior_VIor_O
 	{
 		class ItemInfo: ItemInfo
@@ -3367,7 +3226,7 @@ class CfgWeapons
 			mass=150;
 		};
 	};
-
+	
 	class TIOW_pulse_pistol: Pistol_Base_F
 	{
 		class Single: Mode_SemiAuto
@@ -3375,7 +3234,7 @@ class CfgWeapons
 			reloadTime = 0.1;
 		};
 	};
-
+	
 	class TIOW_Tau_Gear_Base: ItemCore
     {
         class ItemInfo: VestItem
@@ -3383,7 +3242,7 @@ class CfgWeapons
             vestType = "Rebreather";
 		};
     };
-
+	
     class TIOW_Mk7Vest: SM_Gear
 	{
         class ItemInfo: ItemInfo
@@ -3391,7 +3250,7 @@ class CfgWeapons
             vestType = "Rebreather";
         };
     };
-
+	
 	class srifle_LRR_F;
 	class asdg_OpticRail1913;
 	class VNG_smite: srifle_LRR_F
@@ -3451,10 +3310,123 @@ class CfgWeapons
 			aiRateOfFire = 10;
 			aiRateOfFireDistance = 500;
 		};
-
+		
 		class EventHandlers: EventHandlers
 		{
 			fired = "(_this select 0) execVM ""vanguardtiowaddon\Scripts\smite.sqf"";";
+		};
+	};
+	
+	class hgun_P07_F;
+	class LuciusLaspistolBase: hgun_P07_F
+	{
+		magazines[] = {"VNG_LuciusLaspistol_mag", "VNG_LuciusLaspistol_High_mag"};
+	};
+	
+	class TIOW_LongLas_Base: arifle_MX_Base_F
+	{
+		class OpticsModes
+		{
+			class TWS
+			{
+				visionMode[] = {"Normal", "NVG"};
+			};
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime = 2.2;
+		};
+	};
+	
+	class VNG_Tau_Railgun_12_7mm_APDS: LMG_coax
+	{
+		displayName = "Co-axial Railgun";
+		magazines[] = {"VNG_Tau_Railgun_12_7mm_APDS_mag"};
+		magazineReloadTime = 8;
+		class manual: MGun
+		{
+			displayName = "Co-axial Railgun";
+			sounds[] = {"StandardSound"};
+			class StandardSound
+			{
+				SoundSetShot[] = {"TIOW_pulse_rifle_Shot_SoundSet", "TIOW_pulse_rifle_Tail_SoundSet"};
+			};
+			soundContinuous = 0;
+			soundBurst = 0;
+			reloadTime = 0.075;
+			dispersion = 0.0016;
+			aiRateOfFire = 1;
+			aiRateOfFireDistance = 10;
+			minRange = 0;
+			minRangeProbab = 0.01;
+			midRange = 1;
+			midRangeProbab = 0.01;
+			maxRange = 2;
+			maxRangeProbab = 0.01;
+		};
+		class close: manual
+		{
+			aiBurstTerminable = 1;
+			showToPlayer = 0;
+			burst = 8;
+			burstRangeMax = 16;
+			aiRateOfFire = 0.5;
+			aiRateOfFireDispersion = 2;
+			aiRateOfFireDistance = 50;
+			minRange = 0;
+			minRangeProbab = 0.8;
+			midRange = 20;
+			midRangeProbab = 0.7;
+			maxRange = 50;
+			maxRangeProbab = 0.2;
+		};
+		class short: close
+		{
+			aiBurstTerminable = 1;
+			showToPlayer = 0;
+			burst = 6;
+			burstRangeMax = 12;
+			aiRateOfFire = 1;
+			aiRateOfFireDispersion = 2;
+			aiRateOfFireDistance = 150;
+			minRange = 20;
+			minRangeProbab = 0.7;
+			midRange = 150;
+			midRangeProbab = 0.7;
+			maxRange = 300;
+			maxRangeProbab = 0.2;
+		};
+		class medium: close
+		{
+			aiBurstTerminable = 1;
+			showToPlayer = 0;
+			burst = 3;
+			burstRangeMax = 12;
+			aiRateOfFire = 2;
+			aiRateOfFireDispersion = 2;
+			aiRateOfFireDistance = 250;
+			minRange = 150;
+			minRangeProbab = 0.7;
+			midRange = 600;
+			midRangeProbab = 0.65;
+			maxRange = 800;
+			maxRangeProbab = 0.1;
+		};
+		class far: close
+		{
+			aiBurstTerminable = 1;
+			showToPlayer = 0;
+			burst = 3;
+			burstRangeMax = 8;
+			aiRateOfFire = 4;
+			aiRateOfFireDispersion = 4;
+			aiRateOfFireDistance = 600;
+			minRange = 600;
+			minRangeProbab = 0.65;
+			midRange = 800;
+			midRangeProbab = 0.4;
+			maxRange = 1200;
+			maxRangeProbab = 0.1;
 		};
 	};
 };
