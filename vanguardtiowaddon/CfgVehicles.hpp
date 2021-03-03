@@ -7,6 +7,7 @@ class CfgVehicles
 	class B_Soldier_base_F;
 	class B_AssaultPack_Base;
 	class TIOW_Fire_Warrior_VL;
+	class TIOW_Tau_Bck_Breacher;
 	class TIOW_Tau_Bck_Breacher_Shasui;
 	class TIOW_Tau_Bck_Breacher_Shasui_DY;
 	class TIOW_Tau_Bck_Breacher_Shasui_SC;
@@ -243,6 +244,43 @@ class CfgVehicles
         tf_range = 40000;
         tf_subtype = "airborne";
     };
+
+	class TIOW_Tau_Bck_Phndr_Ion: TIOW_Tau_Bck_Breacher
+	{
+		tf_dialog = "rt1523g_radio_dialog";
+        tf_dialogUpdate = "[""CH:1""] call TFAR_fnc_updateLRDialogToChannel;";
+        tf_encryptionCode = "tf_west_radio_code";
+        tf_hasLRradio = 1;
+        tf_range = 40000;
+        tf_subtype = "airborne";
+	};
+	class TIOW_Tau_Bck_Phndr_Shasui: TIOW_Tau_Bck_Breacher
+	{
+		tf_dialog = "rt1523g_radio_dialog";
+        tf_dialogUpdate = "[""CH:1""] call TFAR_fnc_updateLRDialogToChannel;";
+        tf_encryptionCode = "tf_west_radio_code";
+        tf_hasLRradio = 1;
+        tf_range = 40000;
+        tf_subtype = "airborne";
+	};
+	class TIOW_Tau_Bck_Phndr_Rail: TIOW_Tau_Bck_Breacher
+	{
+		tf_dialog = "rt1523g_radio_dialog";
+        tf_dialogUpdate = "[""CH:1""] call TFAR_fnc_updateLRDialogToChannel;";
+        tf_encryptionCode = "tf_west_radio_code";
+        tf_hasLRradio = 1;
+        tf_range = 40000;
+        tf_subtype = "airborne";
+	};
+	class TIOW_Tau_Bck_Phndr: TIOW_Tau_Bck_Breacher
+	{
+		tf_dialog = "rt1523g_radio_dialog";
+        tf_dialogUpdate = "[""CH:1""] call TFAR_fnc_updateLRDialogToChannel;";
+        tf_encryptionCode = "tf_west_radio_code";
+        tf_hasLRradio = 1;
+        tf_range = 40000;
+        tf_subtype = "airborne";
+	};
 
 	class TIOW_CadKasrkinBackpack_836th: B_AssaultPack_Base
 	{
@@ -1371,7 +1409,6 @@ class CfgVehicles
 		side = 1;
 		weapons[] = {"TIOW_LsCnn_mkII_v", "TIOW_rockets_Skyfire_v", "CMFlareLauncher"};
 		magazines[] = {"TIOW_LsCnn_pc_v", "TIOW_38Rnd_80mm_rockets_v", "120Rnd_CMFlare_Chaff_Magazine"};
-		displayName = "Valkyrie->Rockets/Lascannon";
 		editorPreview = "\WHair\Val\ui\editor_pic_valk_rp_ca.paa";
 		fuelCapacity = 800;
 		class AnimationSources: AnimationSources
@@ -1396,7 +1433,6 @@ class CfgVehicles
 		side = 1;
 		weapons[] = {"TIOW_AutoCannon60mm", "TIOW_rockets_Skyfire_v", "CMFlareLauncher"};
 		magazines[] = {"TIOW_Autocannon60mmAPMag", "TIOW_Autocannon60mmHEMag", "TIOW_38Rnd_80mm_rockets_v", "120Rnd_CMFlare_Chaff_Magazine"};
-		displayName = "Valkyrie->Rockets/Lascannon";
 		editorPreview = "\WHair\Val\ui\editor_pic_valk_rp_ca.paa";
 		fuelCapacity = 800;
 		class AnimationSources: AnimationSources

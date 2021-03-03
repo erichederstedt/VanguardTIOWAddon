@@ -297,7 +297,6 @@ class CfgAmmo
 		airFriction = -0.000808;
 	};
 
-	class M36KantRifle_LasBolt;
 	class VNG_LasPistol_LasBolt: M36KantRifle_LasBolt
 	{
 		hit=11.6;

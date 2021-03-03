@@ -23,10 +23,8 @@ class MGun;
 #include "CfgWeapons.hpp"
 class Default;
 #include "CfgMagazines.hpp"
-class Default;
 class BulletBase;
 #include "CfgAmmo.hpp"
-class Default;
 #include "CfgSmoke.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgFunctions.hpp"

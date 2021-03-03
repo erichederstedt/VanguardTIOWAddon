@@ -25,8 +25,6 @@ class CfgWeapons
 
 	class LMG_coax;
 	
-	
-	
 	class KriegHeavyStubber: Rifle_Base_F
 	{
 		magazines[]=
