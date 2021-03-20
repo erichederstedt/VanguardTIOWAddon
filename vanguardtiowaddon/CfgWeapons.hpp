@@ -3318,7 +3318,7 @@ class CfgWeapons
 	class hgun_P07_F;
 	class LuciusLaspistolBase: hgun_P07_F
 	{
-		magazines[] = {"VNG_LuciusLaspistol_mag", "VNG_LuciusLaspistol_High_mag"};
+		magazines[] = {/*"VNG_LuciusLaspistol_mag"*/ "LuciusLaspistol_mag", "VNG_LuciusLaspistol_High_mag"};
 	};
 	
 	class TIOW_LongLas_Base: arifle_MX_Base_F
@@ -3425,6 +3425,16 @@ class CfgWeapons
 			midRangeProbab = 0.4;
 			maxRange = 1200;
 			maxRangeProbab = 0.1;
+		};
+	};
+
+	class TIOW_AgripinaaType2_1;
+	class TIOW_KriegLauncher;
+	class TIOW_AgripinaaType2_UGL: TIOW_AgripinaaType2_1
+	{
+		class TIOW_Type2_AutogunGL: TIOW_KriegLauncher
+		{
+			magazines[] = {"TIOW_1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "UGL_FlareGreen_F", "UGL_FlareRed_F", "UGL_FlareYellow_F", "UGL_FlareCIR_F", "1Rnd_Smoke_Grenade_shell", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeYellow_Grenade_shell", "1Rnd_SmokePurple_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell", "1Rnd_SmokeOrange_Grenade_shell", "ACE_HuntIR_M203"};
 		};
 	};
 };

@@ -2,8 +2,8 @@
 
 SETLOCAL
 
-SET target_output_directory=F:\ArmaWork\#Exports\@VanguardTIOWAddonDev\addons
-SET target_sign_file="F:\Steam\steamapps\common\Arma 3 Tools\DSSignFile\Dolf.biprivatekey"
+SET target_output_directory=E:\ArmaWork\#Exports\@VanguardTIOWAddonDev\addons
+SET target_sign_file="E:\Steam\steamapps\common\Arma 3 Tools\DSSignFile\Dolf.biprivatekey"
 SET target_exclude_directory= ^
 '.git',^
 'vng_terrain',^
