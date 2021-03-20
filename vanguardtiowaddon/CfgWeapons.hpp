@@ -1930,7 +1930,8 @@ class CfgWeapons
 			"TIOW_IG_GL_Smoke_mag",
 			"TIOW_IG_GL_Buck_mag",
 			"TIOW_IG_GL_Flare_mag",
-			"TIOW_IG_GL_Flame_mag"
+			"TIOW_IG_GL_Flame_mag",
+			"ACE_HuntIR_M203"
 		};
 		cameraDir="OP_look";
 		discreteDistance[]={100,200,300,400};
@@ -2187,7 +2188,8 @@ class CfgWeapons
 			"TIOW_IG_GL_Smoke_mag",
 			"TIOW_IG_GL_Buck_mag",
 			"TIOW_IG_GL_Flare_mag",
-			"TIOW_IG_GL_Flame_mag"
+			"TIOW_IG_GL_Flame_mag",
+			"ACE_HuntIR_M203"
 		};
 		cameraDir="OP_look";
 		discreteDistance[]={100,200,300,400};
