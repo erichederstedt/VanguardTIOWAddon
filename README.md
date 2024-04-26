@@ -15,7 +15,7 @@ vng_tiow_ace_compat - Will be the place where the ace compatibility is added.<br
 
 ## Workflow:
 Currently using Addon Builder from Arma 3 Tools with the only additional settings being applied is the "List of files to copy directly" being \*.p3d;\*.paa;\*.ogg;\*.sqf and path to my private key being assigned to automatically sign PBOs. I do have plans to, later on, switch to armake2 once I can get it to fucking compile on Windows(Have no issues doing it on Linux but I can't cross-compile).<br />
-An example on how my file structure looks like: https://github.com/OnkelDolf/ArmaWork<br />
+An example on how my file structure looks like: https://github.com/erichederstedt/ArmaWork<br />
 
 ## Rules
 **Rules for committing:**
